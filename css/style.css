@@ -1,3 +1,13 @@
+/* COLORS:
+red: #d73043
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700');
+
+body{
+  font-family:'Open Sans';
+}
+
 #mapid {
   height: 550px;
   width: 80vw;
@@ -9,11 +19,32 @@
   width:20vw;
   display:inline-block;
   border:3px solid black;
-
+  position:relative;
+  overflow-y:scroll;
+  height:550px;
 }
 #lister{
     padding-left:1vw;
 }
+#view-all{
+  bottom:0;
+  position:absolute;
+  width:calc(20vw - 5px);
+  text-align:center;
+  background-color:#d73043;
+  color:#fff;
+  /*z-index:-9;*/
+}
+
+#view-all p{
+  font-size:13pt;
+  margin:3pt;
+}
+
+#view-all:hover{
+  opacity:.8;
+}
+
 .row{
   display:flex;
 }

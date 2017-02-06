@@ -1,6 +1,7 @@
 console.log("start");
 
 var mymap;
+var mapData;
 
 window.onload = function() { init() };
 
@@ -22,7 +23,7 @@ window.onload = function() { init() };
     for (i in data){
       // console.log(data[i].lat);
     }
-    var mapData = data;
+    mapData = data;
     buildMap(mapData);
 
   }
@@ -53,7 +54,7 @@ window.onload = function() { init() };
         });
 
         var thisMarker = L.marker([places[x].lat, places[x].long], {icon: thisIcon})
-            .on('click', onClick.bind(places[x]))
+            .on('click', onClickMarker.bind(places[x]))
             .bindPopup("<h2>" + places[x].name + "</h2>" )
             .openPopup();
 
@@ -63,11 +64,23 @@ window.onload = function() { init() };
         markers[x].addTo(mymap);
       }
 
-      function onClick(){
+      function onClickMarker(){
+          $('#view-all').show();
           $('#lister').empty();
-
           $('#lister').append('<div><h2>' + this.name + '</h2><h3 style="display:block;">President: ' + this.presidents + '</h3><img class="list-img" src="http://placehold.it/350x200/"/><a class="list-link" href="' + this.website + '">Visit Website</a><a class="list-link" href="' + this.facebook + '">Visit Facebook</a></div>');
-
-
       }
+
+
+
     }
+
+    $('#view-all').on('click', function(){
+      $('#lister').empty();
+      $('#view-all').hide();
+      console.log(mapData);
+      for (var x in mapData){
+        $('#lister').append('<div><h2>' + mapData[x].name + '</h2><h3 style="display:block;">President: ' + mapData[x].presidents + '</h3><img class="list-img" src="http://placehold.it/350x200/"/><a class="list-link" href="' + mapData[x].website + '">Visit Website</a><a class="list-link" href="' + mapData[x].facebook + '">Visit Facebook</a></div>');
+      }
+
+
+    });

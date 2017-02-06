@@ -80,7 +80,7 @@ window.onload = function() { init() };
       $('#view-all').hide();
       console.log(mapData);
       for (var x in mapData){
-        $('#lister').append('<div><h2>' + mapData[x].name + '</h2><h3 style="display:block;">President: ' + mapData[x].presidents + '</h3><img class="list-img" src="http://placehold.it/350x200/"/><a class="list-link" href="' + mapData[x].website + '">Visit Website</a><a class="list-link" href="' + mapData[x].facebook + '">Visit Facebook</a></div>');
+        $('#lister').append('<div><h2>' + mapData[x].name + '</h2><h3 style="display:block;">President: ' + mapData[x].presidents + '</h3><img class="list-img" src="assets/' + mapData[x].photo + '"/><a class="list-link" href="' + mapData[x].website + '">Visit Website</a><a class="list-link" href="' + mapData[x].facebook + '">Visit Facebook</a></div>');
       }
 
 

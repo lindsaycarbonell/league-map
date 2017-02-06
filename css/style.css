@@ -1,0 +1,26 @@
+#mapid {
+  height: 550px;
+  width: 80vw;
+  display:inline-block;
+  border:3px solid black;
+  border-left:none;
+}
+#sidebar{
+  width:20vw;
+  display:inline-block;
+  border:3px solid black;
+
+}
+#lister{
+    padding-left:1vw;
+}
+.row{
+  display:flex;
+}
+.list-img{
+  width:50%;
+  display:inline-block;
+}
+.list-link{
+  display:block;
+}

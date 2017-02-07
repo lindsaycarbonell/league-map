@@ -8,6 +8,9 @@ body{
   font-family:'Open Sans';
 }
 
+h2 {
+  color: #005897;
+}
 #mapid {
   height: 550px;
   width: 80vw;

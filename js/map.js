@@ -44,7 +44,7 @@ window.onload = function() { init() };
 
       mymap.scrollWheelZoom.disable();
 
-      $('#lister').append('<div><h2>' + places[0].name + '</h2><img class="list-img" src="assets/' + places[0].photo + '"/><a class="list-link link-button" href="' + places[0].website + '">Visit Website</a><a class="list-link link-button fb" href="' + places[0].facebook + '">Facebook</a></div>');
+      $('#lister').append('<div><h2>' + places[0].name + '</h2><img class="list-img" src="assets/' + places[0].photo + '"/><a class="list-link link-button" href="' + places[0].website + '" target="_blank">Visit Website</a><a class="list-link link-button fb" href="' + places[0].facebook + '" target="_blank">Facebook <i class="fa fa-facebook-square" aria-hidden="true"></i></a></div>');
 
 
 
@@ -78,10 +78,18 @@ window.onload = function() { init() };
 
       function onClickMarker(){
           $('#lister').empty();
-          if (this.presidents){
-            $('#lister').append('<div><h2>' + this.name + '</h2><h3 style="display:block;">President: ' + this.presidents + '</h3><img class="list-img" src="assets/' + this.photo + '"/><a class="list-link link-button" href="' + this.website + '">Visit Website</a><a class="list-link link-button fb" href="' + this.facebook + '">Facebook <i class="fa fa-facebook-square" aria-hidden="true"></i></a></div>');
+          $('#lister').append('<div><h2>' + this.name + '</h2>');
+          if (this.presidents.includes(" and ")){
+            $('#lister').append('<h3 style="display:block;">Presidents: ' + this.presidents + '</h3>');
           } else {
-            $('#lister').append('<div><h2>' + this.name + '</h2><img class="list-img" src="assets/' + this.photo + '"/><a class="list-link" href="' + this.website + '">Visit Website</a><a class="list-link link-button fb" href="' + this.facebook + '">Facebook <i class="fa fa-facebook-square" aria-hidden="true"></i></a></div>');
+            $('#lister').append('<h3 style="display:block;">President: ' + this.presidents + '</h3>');
           }
+
+          $('#lister').append('<img class="list-img" src="assets/' + this.photo + '"/><a class="list-link link-button" href="' + this.website + '" target="_blank">Visit Website</a>');
+
+          if (this.facebook){
+            $('#lister').append('<a class="list-link link-button fb" href="' + this.facebook + '" target="_blank">Facebook <i class="fa fa-facebook-square" aria-hidden="true"></i></a></div>');
+          }
+
 
       }

@@ -44,7 +44,7 @@ window.onload = function() { init() };
 
       mymap.scrollWheelZoom.disable();
 
-      $('#lister').append('<div><h2>' + places[0].name + '</h2><img class="list-img" src="assets/' + places[0].photo + '"/><a class="list-link link-button" href="' + places[0].website + '" target="_blank">Visit Website</a><a class="list-link link-button fb" href="' + places[0].facebook + '" target="_blank">Facebook <i class="fa fa-facebook-square" aria-hidden="true"></i></a></div>');
+      $('#lister').append('<div><h2>' + places[0].name + '</h2><img class="list-img" src="assets/' + places[0].photo + '"/><a class="list-link link-button fb" href="' + places[0].facebook + '" target="_blank">Find us on Facebook <i class="fa fa-facebook-square" aria-hidden="true"></i></a></div>');
 
 
 

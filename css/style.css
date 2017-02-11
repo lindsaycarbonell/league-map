@@ -11,7 +11,19 @@ body{
 
 h2 {
   color: #005897;
+  font-size:13pt;
+  margin-bottom:5pt;
 }
+h3{
+  margin:5pt;
+  margin-left:0;
+  font-family:'Merriweather';
+  font-size:10pt;
+  font-style:italic;
+}
+.fa{
+  font-size:10pt;
+  }
 #mapid, #sidebar{
   height: 320px;
 }
@@ -43,7 +55,7 @@ h2 {
 	font-family:'Merriweather';
 	font-size:10pt;
 	/*font-weight:bold;*/
-  margin-left:10px;
+  /*margin-left:10px;*/
 	text-decoration:none;
   text-align: center;
   /*width:100px;*/
@@ -58,7 +70,7 @@ h2 {
 	top:1px;
 }
 .fb{
-  margin-top:10px;
+  margin-left:10px;
 }
 
 

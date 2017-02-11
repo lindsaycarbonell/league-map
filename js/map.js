@@ -79,9 +79,9 @@ window.onload = function() { init() };
       function onClickMarker(){
           $('#lister').empty();
           if (this.presidents){
-            $('#lister').append('<div><h2>' + this.name + '</h2><img class="list-img" src="assets/' + this.photo + '"/><h3 style="display:block;">President: ' + this.presidents + '</h3><a class="list-link link-button" href="' + this.website + '">Visit Website</a><a class="list-link link-button" href="' + this.facebook + '">Facebook</a></div>');
+            $('#lister').append('<div><h2>' + this.name + '</h2><h3 style="display:block;">President: ' + this.presidents + '</h3><img class="list-img" src="assets/' + this.photo + '"/><a class="list-link link-button" href="' + this.website + '">Visit Website</a><a class="list-link link-button fb" href="' + this.facebook + '">Facebook <i class="fa fa-facebook-square" aria-hidden="true"></i></a></div>');
           } else {
-            $('#lister').append('<div><h2>' + this.name + '</h2><img class="list-img" src="assets/' + this.photo + '"/><a class="list-link" href="' + this.website + '">Visit Website</a><a class="list-link" href="' + this.facebook + '">Facebook</a></div>');
+            $('#lister').append('<div><h2>' + this.name + '</h2><img class="list-img" src="assets/' + this.photo + '"/><a class="list-link" href="' + this.website + '">Visit Website</a><a class="list-link link-button fb" href="' + this.facebook + '">Facebook <i class="fa fa-facebook-square" aria-hidden="true"></i></a></div>');
           }
 
       }

@@ -78,5 +78,10 @@ window.onload = function() { init() };
 
       function onClickMarker(){
           $('#lister').empty();
-          $('#lister').append('<div><h2>' + this.name + '</h2><h3 style="display:block;">President: ' + this.presidents + '</h3><img class="list-img" src="assets/' + this.photo + '"/><a class="list-link" href="' + this.website + '">Visit Website</a><a class="list-link" href="' + this.facebook + '">Visit Facebook</a></div>');
+          if (this.presidents){
+            $('#lister').append('<div><h2>' + this.name + '</h2><h3 style="display:block;">President: ' + this.presidents + '</h3><img class="list-img" src="assets/' + this.photo + '"/><a class="list-link" href="' + this.website + '">Visit Website</a><a class="list-link" href="' + this.facebook + '">Visit Facebook</a></div>');
+          } else {
+            $('#lister').append('<div><h2>' + this.name + '</h2><img class="list-img" src="assets/' + this.photo + '"/><a class="list-link" href="' + this.website + '">Visit Website</a><a class="list-link" href="' + this.facebook + '">Visit Facebook</a></div>');
+          }
+
       }

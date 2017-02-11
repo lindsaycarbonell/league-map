@@ -29,24 +29,6 @@ h2 {
 #lister{
     padding-left:5px;
 }
-#view-all{
-  bottom:0;
-  position:absolute;
-  width:calc(20vw - 5px);
-  text-align:center;
-  background-color:#d73043;
-  color:#fff;
-  /*z-index:-9;*/
-}
-
-#view-all p{
-  font-size:13pt;
-  margin:3pt;
-}
-
-#view-all:hover{
-  opacity:.8;
-}
 
 .row{
   display:flex;

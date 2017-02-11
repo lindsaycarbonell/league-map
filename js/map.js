@@ -33,7 +33,7 @@ window.onload = function() { init() };
 
     function buildMap(mapData) {
 
-      mymap = L.map('mapid').setView([35.7595731, -79.01929969999998], 7);
+      mymap = L.map('mapid').setView([35.28374272801905, -79.65396881103516], 7);
       //THE ZOOM IS SET UP HERE DUMMY
 
       var places = mapData;
@@ -44,7 +44,7 @@ window.onload = function() { init() };
 
       mymap.scrollWheelZoom.disable();
 
-      $('#lister').append('<div><h2>' + places[0].name + '</h2><h3 style="display:block;">President: ' + places[0].presidents + '</h3><img class="list-img" src="assets/' + places[0].photo + '"/><a class="list-link" href="' + places[0].website + '">Visit Website</a><a class="list-link" href="' + places[0].facebook + '">Visit Facebook</a></div>');
+      $('#lister').append('<div><h2>' + places[0].name + '</h2><img class="list-img" src="assets/' + places[0].photo + '"/><a class="list-link link-button" href="' + places[0].website + '">Visit Website</a><a class="list-link link-button fb" href="' + places[0].facebook + '">Facebook</a></div>');
 
 
 
@@ -79,9 +79,9 @@ window.onload = function() { init() };
       function onClickMarker(){
           $('#lister').empty();
           if (this.presidents){
-            $('#lister').append('<div><h2>' + this.name + '</h2><h3 style="display:block;">President: ' + this.presidents + '</h3><img class="list-img" src="assets/' + this.photo + '"/><a class="list-link" href="' + this.website + '">Visit Website</a><a class="list-link" href="' + this.facebook + '">Visit Facebook</a></div>');
+            $('#lister').append('<div><h2>' + this.name + '</h2><img class="list-img" src="assets/' + this.photo + '"/><h3 style="display:block;">President: ' + this.presidents + '</h3><a class="list-link link-button" href="' + this.website + '">Visit Website</a><a class="list-link link-button" href="' + this.facebook + '">Facebook</a></div>');
           } else {
-            $('#lister').append('<div><h2>' + this.name + '</h2><img class="list-img" src="assets/' + this.photo + '"/><a class="list-link" href="' + this.website + '">Visit Website</a><a class="list-link" href="' + this.facebook + '">Visit Facebook</a></div>');
+            $('#lister').append('<div><h2>' + this.name + '</h2><img class="list-img" src="assets/' + this.photo + '"/><a class="list-link" href="' + this.website + '">Visit Website</a><a class="list-link" href="' + this.facebook + '">Facebook</a></div>');
           }
 
       }

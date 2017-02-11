@@ -3,6 +3,7 @@ red: #d73043
 */
 
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700');
+@import url('https://fonts.googleapis.com/css?family=Merriweather:300i,400,700');
 
 body{
   font-family:'Open Sans';
@@ -11,33 +12,69 @@ body{
 h2 {
   color: #005897;
 }
+#mapid, #sidebar{
+  height: 320px;
+}
 #mapid {
-  height: 550px;
-  width: 80vw;
+  margin-right:50px;
+  width: 75vw;
   display:inline-block;
   border:3px solid black;
   border-left:none;
 }
 #sidebar{
-  width:20vw;
+  margin-left:50px;
+  width:25vw;
   display:inline-block;
   border:3px solid black;
   position:relative;
   overflow-y:scroll;
-  height:550px;
+
 }
 #lister{
     padding-left:5px;
 }
 
+.link-button {
+	background-color:#d73043;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:'Merriweather';
+	font-size:10pt;
+	/*font-weight:bold;*/
+  margin-left:10px;
+	text-decoration:none;
+  text-align: center;
+  /*width:100px;*/
+  padding:8px 15px;
+}
+.link-button:hover {
+	background-color:#d73043;
+  opacity:.7;
+}
+.link-button:active {
+	position:relative;
+	top:1px;
+}
+.fb{
+  margin-top:10px;
+}
+
+
 .row{
   display:flex;
 }
 .list-img{
-  max-width:calc(20vw - 15px);
+  max-width:calc(20vw - 40px);
   margin-right:10px;
   display:inline-block;
 }
 .list-link{
-  display:block;
+  /*display:block;*/
+}
+
+.leaflet-popup-close-button+.leaflet-popup-content-wrapper .leaflet-popup-content{
+  padding:0;
+  text-align:center;
 }

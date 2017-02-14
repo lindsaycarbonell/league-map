@@ -1,8 +1,8 @@
-console.log("start");
-
 var mymap;
 var mapData;
 var markers = [];
+var w;
+// var markersFeat = [];
 
 window.onload = function() { init() };
 
@@ -12,6 +12,8 @@ window.onload = function() { init() };
     Tabletop.init( { key: public_spreadsheet_url,
                      callback: build,
                      simpleSheet: true } );
+
+    w = window.innerWidth;
   }
 
 
@@ -32,8 +34,14 @@ window.onload = function() { init() };
 
 
     function buildMap(mapData) {
+      console.log(w);
 
-      mymap = L.map('mapid').setView([35.28374272801905, -79.65396881103516], 7);
+      if (w <= 990){
+        mymap = L.map('mapid').setView([35.28374272801905, -79.65396881103516], 6);
+      } else {
+        mymap = L.map('mapid').setView([35.28374272801905, -79.65396881103516], 7);
+      }
+
       //THE ZOOM IS SET UP HERE DUMMY
 
       var places = mapData;
@@ -49,10 +57,7 @@ window.onload = function() { init() };
 
 
       for (var x = 1; x < places.length; x++){
-        console.log(places[x].name + " " + x);
 
-
-          console.log("not nc");
           var thisIcon = L.icon({
             iconUrl: 'assets/map-scott.png',
             iconSize:     [38, 38], // size of the icon
@@ -66,14 +71,30 @@ window.onload = function() { init() };
               .bindPopup("<h2>" + places[x].name + "</h2>" )
               .openPopup();
 
-
-            console.log('markers is empty');
             markers.push(thisMarker);
+            // console.log(thisMarker.getLatLng());
+            // if (thisMarker.lat){
+            //   markersFeat.push(thisMarker);
+            // }
+
 
             markers[x-1].addTo(mymap);
-            console.log(markers[x]);
+
           }
+          // fitMap(markersFeat);
         }
+
+        // function fitMap(markersFeat){
+        //   markersFeat = new L.featureGroup();
+        //   console.log("new feature group");
+        //   for (x in markersFeat){
+        //     console.log(markersFeat[x]);
+        //   }
+        //   console.log(markersFeat.getBounds());
+        //   mymap.fitBounds(markersFeat.getBounds());
+        //
+        // }
+
 
 
       function onClickMarker(){

@@ -28,14 +28,14 @@ h3{
   height: 320px;
 }
 #mapid {
-  margin-right:50px;
+  /*margin-right:50px;*/
   width: 75vw;
   display:inline-block;
   border:3px solid black;
   border-left:none;
 }
 #sidebar{
-  margin-left:50px;
+  /*margin-left:50px;*/
   width:25vw;
   display:inline-block;
   border:3px solid black;
@@ -83,10 +83,60 @@ h3{
   display:inline-block;
 }
 .list-link{
-  /*display:block;*/
+  width:100px;
+  margin-top:10px;
+  display:block;
+  margin-left:0;
 }
 
 .leaflet-popup-close-button+.leaflet-popup-content-wrapper .leaflet-popup-content{
   padding:0;
   text-align:center;
+}
+
+@media screen and (max-width:760px){
+  .row{
+    display:flex;
+    flex-direction:column;
+  }
+  #mapid, #sidebar{
+    height: 320px;
+  }
+  #mapid {
+    width: 100%;
+    display:inline-block;
+    border:none;
+    border-left:none;
+  }
+  #sidebar{
+    height:100%;
+    width:100%;
+    display:inline-block;
+    border:none;
+    position:relative;
+    overflow-y:scroll;
+
+  }
+  #lister{
+      /*padding-left:5px;*/
+      padding:0;
+      /*display:flex;*/
+      flex-direction:column;
+  }
+  .link-button{
+    margin-left:0;
+    display:block;
+    width:100px;
+  }
+  .fb{
+    margin-top:10px;
+
+  }
+
+  .list-img{
+    /*max-width:calc(100vw - 20px);*/
+    /*max-height:50vh;*/
+    float:right;
+    max-width:300px;
+  }
 }
